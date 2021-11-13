@@ -1,11 +1,13 @@
 {
-    "name": "@pizza/app",
+    "name": "@pizza/workspace",
     "version": "0.0.1",
     "license": "UNLICENSED",
     "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
-        "start": "parcel serve",
-        "storybook": "start-storybook --port 6006 --static-dir ./public"
+        "format": "prettier --write \"**/*.{css,html,js,json,jsx,ts,tsx}\""
     },
     "dependencies": {
         "@chakra-ui/react": "1.7.1",

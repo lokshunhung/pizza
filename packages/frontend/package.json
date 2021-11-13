@@ -1,0 +1,10 @@
+{
+    "name": "@pizza/frontend",
+    "version": "0.0.1",
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "start": "parcel serve",
+        "storybook": "start-storybook --port 6006 --static-dir ./public"
+    }
+}

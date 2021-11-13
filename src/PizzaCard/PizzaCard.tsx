@@ -17,7 +17,7 @@ export const PizzaCard = (props: Props) => {
                     <AspectRatioImage ratio={dimensions.width / dimensions.height} src={pizza.image} />
                 </Box>
                 <Text textAlign="center">
-                    {pizza.description.name} - ${pizza.description.price}
+                    {pizza.description.name} - ${pizza.description.price.toFixed(2)}
                 </Text>
                 <Button colorScheme="blue">Choose</Button>
             </VStack>

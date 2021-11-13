@@ -1,3 +1,8 @@
+export type OrderItem = {
+    id: string;
+    item: PizzaDescription;
+};
+
 export type PizzaItem = {
     image: string;
     description: PizzaDescription;

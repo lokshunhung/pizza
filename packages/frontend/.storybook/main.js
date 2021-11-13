@@ -24,8 +24,8 @@ const config = {
         config.resolve.alias = config.resolve.alias || {};
         Object.assign(config.resolve.alias, {
             // https://github.com/chakra-ui/chakra-ui/issues/2527#issuecomment-728161743
-            "@emotion/core": path.join(__dirname, "../node_modules/@emotion/react"),
-            "emotion-theming": path.join(__dirname, "../node_modules/@emotion/react"),
+            "@emotion/core": path.join(__dirname, "../../../node_modules/@emotion/react"),
+            "emotion-theming": path.join(__dirname, "../../../node_modules/@emotion/react"),
         });
 
         return config;

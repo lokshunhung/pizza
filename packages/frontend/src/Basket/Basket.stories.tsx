@@ -1,5 +1,5 @@
+import { createStory } from "@pizza/utils/createStory";
 import * as BasketItemListStories from "../BasketItemList/BasketItemList.stories";
-import { createStory } from "../utils/createStory";
 import { Basket } from "./Basket";
 
 const { Template, meta } = createStory(Basket, {

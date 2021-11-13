@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useDisclosure } from "@chakra-ui/hooks";
+import { createStory } from "@pizza/utils/createStory";
 import { Fragment, useState } from "react";
-import { createStory } from "../utils/createStory";
 import { PizzaDetailsModal } from "./PizzaDetailsModal";
 
 const { meta } = createStory(PizzaDetailsModal, {

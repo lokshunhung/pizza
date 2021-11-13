@@ -1,5 +1,5 @@
 import { Container } from "@chakra-ui/layout";
-import { createStory } from "../utils/createStory";
+import { createStory } from "@pizza/utils/createStory";
 import { BasketItemList } from "./BasketItemList";
 
 const { Template, meta } = createStory(BasketItemList, {

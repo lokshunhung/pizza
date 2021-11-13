@@ -1,6 +1,6 @@
 import { Box, Button, Text, VStack } from "@chakra-ui/react";
+import { PizzaItem } from "@pizza/types";
 import { AspectRatioImage } from "../AspectRatioImage/AspectRatioImage";
-import { PizzaItem } from "../types";
 
 const dimensions = { width: 640, height: 390 };
 

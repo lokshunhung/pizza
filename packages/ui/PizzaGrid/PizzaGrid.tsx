@@ -1,6 +1,6 @@
 import { Grid } from "@chakra-ui/react";
+import { PizzaItem } from "@pizza/types";
 import { PizzaCard } from "../PizzaCard/PizzaCard";
-import { PizzaItem } from "../types";
 
 const dimensions = { width: 320 };
 

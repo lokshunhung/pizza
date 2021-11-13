@@ -1,9 +1,9 @@
 {
-    "name": "@pizza/frontend",
+    "name": "@pizza/ui",
     "version": "0.0.1",
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "start": "parcel serve"
+        "storybook": "start-storybook --port 6006"
     }
 }

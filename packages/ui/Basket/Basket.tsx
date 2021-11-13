@@ -1,6 +1,6 @@
 import { Box, Button, VStack } from "@chakra-ui/react";
+import { OrderItem } from "@pizza/types";
 import { BasketItemList } from "../BasketItemList/BasketItemList";
-import { OrderItem } from "../types";
 
 type Props = {
     orderItems: Array<OrderItem>;

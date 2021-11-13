@@ -1,5 +1,5 @@
 import { Box, Divider, HStack, Text, VStack } from "@chakra-ui/react";
-import { OrderItem } from "../types";
+import { OrderItem } from "@pizza/types";
 
 type Props = {
     orderItems: Array<OrderItem>;

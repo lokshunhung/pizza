@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, HStack, Radio, RadioGroup } from "@chakra-ui/react";
+import { FormControl, FormLabel, HStack, Radio, RadioGroup } from "@chakra-ui/react";
 
 const pizzaSizes = ["S", "M", "L"];
 

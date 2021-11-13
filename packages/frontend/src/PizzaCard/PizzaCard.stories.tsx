@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/layout";
 import { createStory } from "@pizza/utils/createStory";
-import * as fixtures from "../fixtures";
+import * as fixtures from "@pizza/utils/fixtures";
 import { PizzaCard } from "./PizzaCard";
 
 const { Template, meta } = createStory(PizzaCard, {

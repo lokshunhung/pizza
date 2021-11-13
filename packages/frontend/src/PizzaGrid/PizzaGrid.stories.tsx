@@ -1,5 +1,5 @@
 import { createStory } from "@pizza/utils/createStory";
-import * as fixtures from "../fixtures";
+import * as fixtures from "@pizza/utils/fixtures";
 import { PizzaGrid } from "./PizzaGrid";
 
 const { Template, meta } = createStory(PizzaGrid, {

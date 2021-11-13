@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/layout";
+import * as fixtures from "../fixtures";
 import { createStory } from "../utils/createStory";
-import imgPizza from "./p1.jpg";
 import { PizzaCard } from "./PizzaCard";
 
 const { Template, meta } = createStory(PizzaCard, {
@@ -17,7 +17,7 @@ const { Template, meta } = createStory(PizzaCard, {
 export const PizzaCard_ = Template.bind({});
 PizzaCard_.args = {
     pizza: {
-        image: imgPizza,
+        image: fixtures.p1,
         description: {
             name: "Pizza Name",
             price: 10,

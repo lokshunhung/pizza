@@ -1,0 +1,42 @@
+[
+    {
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p1.jpg",
+        "description": {
+            "name": "Pizza one",
+            "price": 1,
+            "toppings": ["Tomatoes", "Pineapple", "Pepperoni", "Cheese", "Ham"]
+        }
+    },
+    {
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p2.jpg",
+        "description": {
+            "name": "Pizza two",
+            "price": 2,
+            "toppings": ["Top A", "Top B", "Top C"]
+        }
+    },
+    {
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p3.jpg",
+        "description": {
+            "name": "Pizza three",
+            "price": 3,
+            "toppings": ["Top one", "Top two", "Top three"]
+        }
+    },
+    {
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p4.jpg",
+        "description": {
+            "name": "Pizza four",
+            "price": 4,
+            "toppings": ["Top a", "Top b", "Top c", "Top d"]
+        }
+    },
+    {
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p5.jpg",
+        "description": {
+            "name": "Pizza five",
+            "price": 5,
+            "toppings": ["Top 1", "Top 2", "Top 3", "Top 4", "Top 5"]
+        }
+    }
+]

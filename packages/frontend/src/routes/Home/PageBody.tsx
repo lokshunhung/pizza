@@ -1,19 +1,20 @@
 import { Box, Container, HStack } from "@chakra-ui/react";
-import { OrderItem, PizzaItem } from "@pizza/types";
 import { Basket } from "@pizza/ui/Basket/Basket";
 import { NoPizzaPlaceholder } from "@pizza/ui/NoPizzaPlaceholder/NoPizzaPlaceholder";
 import { PizzaGrid } from "@pizza/ui/PizzaGrid/PizzaGrid";
+import { useDispatch } from "react-redux";
+import { commands } from "../../store/actions";
+import { useTypedSelector } from "../../store/hooks";
 
-type Props = {
-    pizzaListing: Array<PizzaItem>;
-    orderItems: Array<OrderItem>;
-};
+export const PageBody = () => {
+    const pizzaListing = useTypedSelector(state => state.pizzaListing);
+    const orderItems = useTypedSelector(state => state.orderItems);
 
-export const PageBody = (props: Props) => {
-    const { pizzaListing, orderItems } = props;
-    const onCheckout = () => {};
-    const onEmptyBasket = () => {};
-    const onRemoveOrder = (id: string) => {};
+    const dispatch = useDispatch();
+    const onCheckout = () => dispatch(commands.submitPizzaOrder(orderItems));
+    const onEmptyBasket = () => dispatch(commands.clearAllPizzaOrderItem());
+    const onRemoveOrder = (id: string) => dispatch(commands.removePizzaOrderItem(id));
+
     return (
         <Container flex="1" maxWidth="container.xl" paddingY={4}>
             <HStack>

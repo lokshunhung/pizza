@@ -2,16 +2,24 @@ import { PageFooter } from "@pizza/ui/PageFooter/PageFooter";
 import { PageHeader } from "@pizza/ui/PageHeader/PageHeader";
 import { PageScaffold } from "@pizza/ui/PageScaffold/PageScaffold";
 import { PizzaLoadingSpinner } from "@pizza/ui/PizzaLoadingSpinner/PizzaLoadingSpinner";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { commands } from "../../store/actions";
+import { useIsLoading } from "../../store/hooks";
 import { PageBody } from "./PageBody";
 
 export const Home = () => {
-    const pizzaListing = [] as any;
-    const orderItems = [] as any;
+    const isLoading = useIsLoading();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(commands.fetchPizzaListing());
+    }, []);
+
     return (
         <PageScaffold>
             <PageHeader />
-            {/* <PizzaLoadingSpinner /> */}
-            <PageBody pizzaListing={pizzaListing} orderItems={orderItems} />
+            {isLoading ? <PizzaLoadingSpinner /> : <PageBody />}
             <PageFooter />
         </PageScaffold>
     );

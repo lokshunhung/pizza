@@ -1,6 +1,6 @@
 [
     {
-        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p1.jpg",
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p1.jpg",
         "description": {
             "name": "Pizza one",
             "price": 1,
@@ -8,7 +8,7 @@
         }
     },
     {
-        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p2.jpg",
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p2.jpg",
         "description": {
             "name": "Pizza two",
             "price": 2,
@@ -16,7 +16,7 @@
         }
     },
     {
-        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p3.jpg",
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p3.jpg",
         "description": {
             "name": "Pizza three",
             "price": 3,
@@ -24,7 +24,7 @@
         }
     },
     {
-        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p4.jpg",
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p4.jpg",
         "description": {
             "name": "Pizza four",
             "price": 4,
@@ -32,7 +32,7 @@
         }
     },
     {
-        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/master/packages/utils/fixtures/p5.jpg",
+        "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p5.jpg",
         "description": {
             "name": "Pizza five",
             "price": 5,

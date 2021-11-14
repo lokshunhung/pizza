@@ -3,6 +3,7 @@ export type OrderItem = {
     pizzaId: string;
     pizzaName: string;
     pizzaPrice: number;
+    selectedSize: string;
     selectedToppings: Array<string>;
 };
 

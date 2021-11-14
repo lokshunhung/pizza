@@ -10,6 +10,19 @@ export const ConnectedPizzaDetailsModal = () => {
     const pizza = useTypedSelector(state => state.pizzaListing.find(pizza => pizza.pizzaId === modalDetails?.pizzaId));
     const dispatch = useDispatch();
     const onClose = () => dispatch(commands.closePizzaDetailsModal());
+    const onAddToBasket = () => {
+        dispatch(
+            commands.addPizzaOrderItem({
+                orderId: `${Date.now() + Math.floor(Math.random() * 1000)}`,
+                pizzaId: pizza!.pizzaId,
+                pizzaName: pizza!.name,
+                pizzaPrice: pizza!.price,
+                selectedSize: modalDetails!.selectedSize!,
+                selectedToppings: modalDetails!.selectedToppings,
+            }),
+        );
+        onClose();
+    };
     const onSelectSize = (selectedSize: string) =>
         dispatch(commands.updatePizzaDetailsModalSelection({ selectedSize }));
     const onSelectToppings = (selectedToppings: Array<string>) =>
@@ -18,6 +31,7 @@ export const ConnectedPizzaDetailsModal = () => {
     return (
         <PizzaDetailsModal
             isOpen={modalDetails !== null}
+            onAddToBasket={onAddToBasket}
             onClose={onClose}
             sizes={pizzaSizes}
             title={pizza?.name || ""}

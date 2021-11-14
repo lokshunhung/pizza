@@ -14,6 +14,7 @@ import { TopingsFormRow } from "./TopingsFormRow";
 
 type Props = {
     isOpen: boolean;
+    onAddToBasket: () => void;
     onClose: () => void;
     title: string;
     sizes: Array<string>;
@@ -25,8 +26,19 @@ type Props = {
 };
 
 export const PizzaDetailsModal = (props: Props) => {
-    const { isOpen, onClose, title, sizes, topings, selectedSize, onSelectSize, selectedTopings, onSelectTopings } =
-        props;
+    const {
+        isOpen,
+        onAddToBasket,
+        onClose,
+        title,
+        sizes,
+        topings,
+        selectedSize,
+        onSelectSize,
+        selectedTopings,
+        onSelectTopings,
+    } = props;
+    const disabled = !selectedSize;
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
@@ -40,7 +52,9 @@ export const PizzaDetailsModal = (props: Props) => {
                     </VStack>
                 </ModalBody>
                 <ModalFooter justifyContent="flex-start">
-                    <Button colorScheme="blue">Add to basket</Button>
+                    <Button disabled={disabled} onClick={onAddToBasket} colorScheme="blue">
+                        Add to basket
+                    </Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>

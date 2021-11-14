@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
 interface Props {
-    children: React.ReactElement | Array<React.ReactElement>;
+    children?: React.ReactNode;
 }
 
 export const PageScaffold = (props: Props) => {

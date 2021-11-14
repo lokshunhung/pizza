@@ -2,7 +2,7 @@ import { CheckCircleIcon } from "@chakra-ui/icons";
 import { Container, Text, VStack } from "@chakra-ui/react";
 
 type Props = {
-    children?: React.ReactElement | Array<React.ReactElement> | undefined;
+    children?: React.ReactNode;
 };
 
 export const OrderSuccess = (props: Props) => {

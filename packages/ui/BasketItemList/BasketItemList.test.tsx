@@ -57,4 +57,24 @@ describe("BasketItemList", () => {
         rerender(<BasketItemList orderItems={createOrderItems().slice(1)} onRemoveOrder={onRemoveOrder} />);
         expect(screen.getByText(/Total/).parentElement).toHaveTextContent("$50.00");
     });
+
+    test("displays order item details", () => {
+        const onRemoveOrder = jest.fn();
+        render(
+            <BasketItemList
+                orderItems={[
+                    {
+                        orderId: "o2",
+                        pizzaId: "p2",
+                        pizzaName: "Second pizza",
+                        pizzaPrice: 20,
+                        selectedSize: "S",
+                        selectedToppings: ["top 1", "top 2", "top 3"],
+                    },
+                ]}
+                onRemoveOrder={onRemoveOrder}
+            />,
+        );
+        expect(screen.queryByText(/S, top 1, top 2, top 3/)).toBeTruthy();
+    });
 });

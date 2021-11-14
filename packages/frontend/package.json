@@ -4,7 +4,8 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "start": "parcel serve"
+        "start": "parcel serve",
+        "build": "parcel build --no-autoinstall --dist-dir ../../dist/ --no-cache --no-scope-hoist --public-url $APP_PUBLIC_URL"
     },
     "targets": {
         "default": {

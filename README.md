@@ -12,9 +12,11 @@ Node v14+ and Yarn v1 should be installed on the development machine. Install pr
 
 Runnable commands for each packages can be found in `package.json#scripts`
 
-To start development server to serve the webpage, run: `$ yarn workspace @pizza/app start` and open browser at `localhost:1234`
+To start development server to serve the webpage, run: `$ yarn workspace @pizza/frontend start` and open browser at `localhost:1234`
 
 To start storybook server for UI development, run: `$ yarn workspace @pizza/ui start` and open browser at `localhost:6006`
+
+To build the web application, run: `$ yarn workspace @pizza/frontend build` and go to the `dist/` directory
 
 ## Project Structure
 

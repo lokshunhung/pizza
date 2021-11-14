@@ -6,13 +6,14 @@ type Props = {
     orderItems: Array<OrderItem>;
     onCheckout: () => void;
     onEmptyBasket: () => void;
+    onRemoveOrder: (id: string) => void;
 };
 
 export const Basket = (props: Props) => {
-    const { orderItems, onCheckout, onEmptyBasket } = props;
+    const { orderItems, onCheckout, onEmptyBasket, onRemoveOrder } = props;
     return (
         <Box>
-            <BasketItemList orderItems={orderItems} />
+            <BasketItemList orderItems={orderItems} onRemoveOrder={onRemoveOrder} />
             <VStack paddingY={4}>
                 <Button minWidth={60} colorScheme="blue" onClick={onCheckout}>
                     Checkout

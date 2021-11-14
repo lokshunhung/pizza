@@ -13,6 +13,7 @@ export const PageBody = (props: Props) => {
     const { pizzaListing, orderItems } = props;
     const onCheckout = () => {};
     const onEmptyBasket = () => {};
+    const onRemoveOrder = (id: string) => {};
     return (
         <Container flex="1" maxWidth="container.xl" paddingY={4}>
             <HStack>
@@ -20,7 +21,12 @@ export const PageBody = (props: Props) => {
                     {pizzaListing.length === 0 ? <NoPizzaPlaceholder /> : <PizzaGrid pizzaListing={pizzaListing} />}
                 </Box>
                 <Box flex="0 0">
-                    <Basket orderItems={orderItems} onCheckout={onCheckout} onEmptyBasket={onEmptyBasket} />
+                    <Basket
+                        orderItems={orderItems}
+                        onCheckout={onCheckout}
+                        onEmptyBasket={onEmptyBasket}
+                        onRemoveOrder={onRemoveOrder}
+                    />
                 </Box>
             </HStack>
         </Container>

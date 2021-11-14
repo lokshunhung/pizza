@@ -1,13 +1,20 @@
-import { Box, Divider, HStack, Text, VStack } from "@chakra-ui/react";
+import { CloseIcon } from "@chakra-ui/icons";
+import { Box, Divider, HStack, IconButton, Text, VStack } from "@chakra-ui/react";
 import { OrderItem } from "@pizza/types";
+import { useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
+import { ConfirmRemoveModal } from "./ConfirmRemoveModal";
 
 type Props = {
     orderItems: Array<OrderItem>;
+    onRemoveOrder: (id: string) => void;
 };
 
 export const BasketItemList = (props: Props) => {
-    const { orderItems } = props;
+    const { orderItems, onRemoveOrder } = props;
+    const [removeOrderId, setRemoveOrderId] = useState<string | null>(null);
+    const onRemoveModalConfirm = () => onRemoveOrder(removeOrderId!);
+    const onRemoveModalClose = () => setRemoveOrderId(null);
     const total = orderItems.reduce((acc, cur) => acc + cur.item.price, 0);
     return (
         <Box>
@@ -22,17 +29,32 @@ export const BasketItemList = (props: Props) => {
                 ) : (
                     orderItems.map(({ id, item }) => (
                         <HStack justifyContent="space-between" key={id}>
-                            <Text>{item.name}</Text>
+                            <IconButton
+                                icon={<CloseIcon />}
+                                size="xs"
+                                variant="ghost"
+                                borderRadius="50%"
+                                aria-label="Remove"
+                                onClick={() => setRemoveOrderId(id)}
+                            />
+                            <Text flex="1">{item.name}</Text>
                             <Text>${item.price.toFixed(2)}</Text>
                         </HStack>
                     ))
                 )}
                 <Divider />
                 <HStack justifyContent="space-between" fontWeight="bold">
-                    <Text>Total</Text>
+                    <Box padding={3} />
+                    <Text flex="1">Total</Text>
                     <Text>${total.toFixed(2)}</Text>
                 </HStack>
             </VStack>
+
+            <ConfirmRemoveModal
+                isOpen={removeOrderId !== null}
+                onClose={onRemoveModalClose}
+                onConfirm={onRemoveModalConfirm}
+            />
         </Box>
     );
 };

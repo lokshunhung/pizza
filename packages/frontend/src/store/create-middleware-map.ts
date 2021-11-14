@@ -52,6 +52,12 @@ export const createMiddlewareMap = ({ pizzaService }: Dependencies): Record<stri
             if (commands.closePizzaDetailsModal.matchActionName(action)) {
                 middleware.dispatch(documents.setModal({ pizzaDetails: null }));
             }
+
+            if (commands.updatePizzaDetailsModalSelection.matchActionName(action)) {
+                const pizzaDetails = middleware.getState().modal.pizzaDetails!;
+                const newPizzaDetails = { ...pizzaDetails, ...action.payload };
+                middleware.dispatch(documents.setModal({ pizzaDetails: newPizzaDetails }));
+            }
         },
 
         submitPizzaOrder: middleware => next => action => {

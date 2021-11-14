@@ -14,7 +14,9 @@ export const TopingsFormRow = (props: Props) => {
             <CheckboxGroup value={value} onChange={onChange}>
                 <VStack alignItems="flex-start">
                     {topings.map(item => (
-                        <Checkbox value={item}>{item}</Checkbox>
+                        <Checkbox value={item} key={item}>
+                            {item}
+                        </Checkbox>
                     ))}
                 </VStack>
             </CheckboxGroup>

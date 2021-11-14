@@ -8,7 +8,6 @@ import { useTypedSelector } from "../../store/hooks";
 
 export const PageBody = () => {
     const pizzaListing = useTypedSelector(state => state.pizzaListing);
-    console.log(pizzaListing);
     const orderItems = useTypedSelector(state => state.orderItems);
 
     const dispatch = useDispatch();

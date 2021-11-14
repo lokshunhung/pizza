@@ -1,4 +1,4 @@
-import { Box, Button, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import { PizzaItem } from "@pizza/types";
 import { AspectRatioImage } from "../AspectRatioImage/AspectRatioImage";
 
@@ -12,8 +12,9 @@ type Props = {
 export const PizzaCard = (props: Props) => {
     const { pizza, onChoose } = props;
     const onClick = () => onChoose(pizza.pizzaId);
+    const borderColor = useColorModeValue("gray.100", "gray.600");
     return (
-        <Box padding={4} borderWidth={1} borderStyle="solid" borderColor="gray.100" borderRadius="md" boxShadow="md">
+        <Box padding={4} borderWidth={1} borderStyle="solid" borderColor={borderColor} borderRadius="md" boxShadow="md">
             <VStack spacing={4} alignItems="stretch" justifyContent="center">
                 <Box borderRadius="md" overflow="hidden">
                     <AspectRatioImage ratio={dimensions.width / dimensions.height} src={pizza.image} />

@@ -7,19 +7,19 @@ import { ConfirmRemoveModal } from "./ConfirmRemoveModal";
 
 type Props = {
     orderItems: Array<OrderItem>;
-    onRemoveOrder: (id: string) => void;
+    onRemoveOrder: (orderId: string) => void;
 };
 
 export const BasketItemList = (props: Props) => {
-    const { orderItems, onRemoveOrder } = props;
+    const { orderItems: basketItems, onRemoveOrder } = props;
     const [removeOrderId, setRemoveOrderId] = useState<string | null>(null);
     const onRemoveModalConfirm = () => onRemoveOrder(removeOrderId!);
     const onRemoveModalClose = () => setRemoveOrderId(null);
-    const total = orderItems.reduce((acc, cur) => acc + cur.item.price, 0);
+    const total = basketItems.reduce((acc, cur) => acc + cur.pizzaPrice, 0);
     return (
         <Box>
             <VStack alignItems="stretch">
-                {orderItems.length === 0 ? (
+                {basketItems.length === 0 ? (
                     <HStack color="gray.300">
                         <Text fontSize="xl">
                             <TiShoppingCart />
@@ -27,18 +27,18 @@ export const BasketItemList = (props: Props) => {
                         <Text>No orders</Text>
                     </HStack>
                 ) : (
-                    orderItems.map(({ id, item }) => (
-                        <HStack justifyContent="space-between" key={id}>
+                    basketItems.map(item => (
+                        <HStack justifyContent="space-between" key={item.orderId}>
                             <IconButton
                                 icon={<CloseIcon />}
                                 size="xs"
                                 variant="ghost"
                                 borderRadius="50%"
                                 aria-label="Remove"
-                                onClick={() => setRemoveOrderId(id)}
+                                onClick={() => setRemoveOrderId(item.orderId)}
                             />
-                            <Text flex="1">{item.name}</Text>
-                            <Text>${item.price.toFixed(2)}</Text>
+                            <Text flex="1">{item.pizzaName}</Text>
+                            <Text>${item.pizzaPrice.toFixed(2)}</Text>
                         </HStack>
                     ))
                 )}

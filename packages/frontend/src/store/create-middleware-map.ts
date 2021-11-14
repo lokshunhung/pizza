@@ -30,12 +30,27 @@ export const createMiddlewareMap = ({ pizzaService }: Dependencies): Record<stri
 
             if (commands.removePizzaOrderItem.matchActionName(action)) {
                 const { orderItems } = middleware.getState();
-                const newOrderItems = orderItems.filter(orderItem => orderItem.id !== action.payload);
+                const newOrderItems = orderItems.filter(orderItem => orderItem.orderId !== action.payload);
                 middleware.dispatch(documents.setPizzaOrder(newOrderItems));
             }
 
             if (commands.clearAllPizzaOrderItem.matchActionName(action)) {
                 middleware.dispatch(documents.setPizzaOrder([]));
+            }
+        },
+
+        pizzaModal: middleware => next => action => {
+            next(action);
+
+            if (commands.openPizzaDetailsModal.matchActionName(action)) {
+                const pizzaId = action.payload;
+                middleware.dispatch(
+                    documents.setModal({ pizzaDetails: { pizzaId, selectedSize: undefined, selectedToppings: [] } }),
+                );
+            }
+
+            if (commands.closePizzaDetailsModal.matchActionName(action)) {
+                middleware.dispatch(documents.setModal({ pizzaDetails: null }));
             }
         },
 

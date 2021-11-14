@@ -9,4 +9,11 @@ export type State = {
     loading: number;
     pizzaListing: Array<PizzaItem>;
     orderItems: Array<OrderItem>;
+    modal: {
+        pizzaDetails: {
+            pizzaId: string;
+            selectedSize: string | undefined;
+            selectedToppings: Array<string>;
+        } | null;
+    };
 };

@@ -6,6 +6,9 @@ const initialState: State = {
     loading: 0,
     pizzaListing: [],
     orderItems: [],
+    modal: {
+        pizzaDetails: null,
+    },
 };
 
 export const reducer = (state: State = initialState, action: AnyAction): State => {
@@ -23,6 +26,12 @@ export const reducer = (state: State = initialState, action: AnyAction): State =
     if (documents.setPizzaOrder.matchActionName(action)) {
         const orderItems = action.payload;
         return { ...state, orderItems };
+    }
+
+    if (documents.setModal.matchActionName(action)) {
+        const options = action.payload;
+        const modal = { ...state.modal, ...options };
+        return { ...state, modal };
     }
 
     return state;

@@ -1,9 +1,24 @@
 import { OrderItem, PizzaItem } from "@pizza/types";
 import { createActions } from "@pizza/utils/createActions";
+import { State } from "./types";
 
 export const commands = createActions("cmd", {
     fetchPizzaListing() {
         return {} as const;
+    },
+
+    openPizzaDetailsModal(pizzaId: string) {
+        return { payload: pizzaId } as const;
+    },
+
+    closePizzaDetailsModal() {
+        return {} as const;
+    },
+
+    updatePizzaDetailsModalSelection(
+        options: Partial<Pick<NonNullable<State["modal"]["pizzaDetails"]>, "selectedSize" | "selectedToppings">>,
+    ) {
+        return { payload: options } as const;
     },
 
     addPizzaOrderItem(orderItem: OrderItem) {
@@ -34,5 +49,9 @@ export const documents = createActions("doc", {
 
     setPizzaOrder(orderItems: Array<OrderItem>) {
         return { payload: orderItems } as const;
+    },
+
+    setModal(options: Partial<State["modal"]>) {
+        return { payload: options } as const;
     },
 });

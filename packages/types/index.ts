@@ -1,14 +1,14 @@
 export type OrderItem = {
-    id: string;
-    item: PizzaDescription;
+    orderId: string;
+    pizzaId: string;
+    pizzaName: string;
+    pizzaPrice: number;
+    selectedToppings: Array<string>;
 };
 
 export type PizzaItem = {
+    pizzaId: string;
     image: string;
-    description: PizzaDescription;
-};
-
-export type PizzaDescription = {
     name: string;
     price: number;
     toppings: Array<string>;

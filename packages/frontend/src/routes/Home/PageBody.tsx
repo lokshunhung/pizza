@@ -8,18 +8,24 @@ import { useTypedSelector } from "../../store/hooks";
 
 export const PageBody = () => {
     const pizzaListing = useTypedSelector(state => state.pizzaListing);
+    console.log(pizzaListing);
     const orderItems = useTypedSelector(state => state.orderItems);
 
     const dispatch = useDispatch();
+    const onChoose = (pizzaId: string) => dispatch(commands.openPizzaDetailsModal(pizzaId));
     const onCheckout = () => dispatch(commands.submitPizzaOrder(orderItems));
     const onEmptyBasket = () => dispatch(commands.clearAllPizzaOrderItem());
-    const onRemoveOrder = (id: string) => dispatch(commands.removePizzaOrderItem(id));
+    const onRemoveOrder = (orderId: string) => dispatch(commands.removePizzaOrderItem(orderId));
 
     return (
         <Container flex="1" maxWidth="container.xl" paddingY={4}>
             <HStack>
                 <Box flex="1">
-                    {pizzaListing.length === 0 ? <NoPizzaPlaceholder /> : <PizzaGrid pizzaListing={pizzaListing} />}
+                    {pizzaListing.length === 0 ? (
+                        <NoPizzaPlaceholder />
+                    ) : (
+                        <PizzaGrid pizzaListing={pizzaListing} onChoose={onChoose} />
+                    )}
                 </Box>
                 <Box flex="0 0">
                     <Basket

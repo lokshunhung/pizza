@@ -1,14 +1,13 @@
 import { FormControl, FormLabel, HStack, Radio, RadioGroup } from "@chakra-ui/react";
 
-const pizzaSizes = ["S", "M", "L"];
-
 type Props = {
+    sizes: Array<string>;
     value: string;
     onChange: (value: string) => void;
 };
 
 export const SizeFormRow = (props: Props) => {
-    const { value, onChange } = props;
+    const { sizes: pizzaSizes, value, onChange } = props;
     return (
         <FormControl>
             <FormLabel>Size</FormLabel>

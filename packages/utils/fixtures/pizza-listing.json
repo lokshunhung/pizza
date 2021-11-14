@@ -1,42 +1,37 @@
 [
     {
+        "pizzaId": "p1",
         "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p1.jpg",
-        "description": {
-            "name": "Pizza one",
-            "price": 1,
-            "toppings": ["Tomatoes", "Pineapple", "Pepperoni", "Cheese", "Ham"]
-        }
+        "name": "Pizza one",
+        "price": 1,
+        "toppings": ["Tomatoes", "Pineapple", "Pepperoni", "Cheese", "Ham"]
     },
     {
+        "pizzaId": "p2",
         "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p2.jpg",
-        "description": {
-            "name": "Pizza two",
-            "price": 2,
-            "toppings": ["Top A", "Top B", "Top C"]
-        }
+        "name": "Pizza two",
+        "price": 2,
+        "toppings": ["Top A", "Top B", "Top C"]
     },
     {
+        "pizzaId": "p3",
         "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p3.jpg",
-        "description": {
-            "name": "Pizza three",
-            "price": 3,
-            "toppings": ["Top one", "Top two", "Top three"]
-        }
+        "name": "Pizza three",
+        "price": 3,
+        "toppings": ["Top one", "Top two", "Top three"]
     },
     {
+        "pizzaId": "p4",
         "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p4.jpg",
-        "description": {
-            "name": "Pizza four",
-            "price": 4,
-            "toppings": ["Top a", "Top b", "Top c", "Top d"]
-        }
+        "name": "Pizza four",
+        "price": 4,
+        "toppings": ["Top a", "Top b", "Top c", "Top d"]
     },
     {
+        "pizzaId": "p5",
         "image": "https://raw.githubusercontent.com/lokshunhung/pizza/ed0ca2afbee4efba7d7d69288c74d9198110b83e/packages/utils/fixtures/p5.jpg",
-        "description": {
-            "name": "Pizza five",
-            "price": 5,
-            "toppings": ["Top 1", "Top 2", "Top 3", "Top 4", "Top 5"]
-        }
+        "name": "Pizza five",
+        "price": 5,
+        "toppings": ["Top 1", "Top 2", "Top 3", "Top 4", "Top 5"]
     }
 ]

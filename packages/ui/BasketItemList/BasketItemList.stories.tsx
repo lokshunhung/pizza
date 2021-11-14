@@ -22,12 +22,11 @@ export const One = Template.bind({});
 One.args = {
     orderItems: [
         {
-            id: "1",
-            item: {
-                name: "First pizza",
-                price: 10,
-                toppings: [],
-            },
+            orderId: "o1",
+            pizzaId: "p1",
+            pizzaName: "First pizza",
+            pizzaPrice: 10,
+            selectedToppings: [],
         },
     ],
 };
@@ -36,28 +35,25 @@ export const Many = Template.bind({});
 Many.args = {
     orderItems: [
         {
-            id: "1",
-            item: {
-                name: "First pizza",
-                price: 10,
-                toppings: [],
-            },
+            orderId: "o1",
+            pizzaId: "p1",
+            pizzaName: "First pizza",
+            pizzaPrice: 10,
+            selectedToppings: [],
         },
         {
-            id: "2",
-            item: {
-                name: "Second pizza",
-                price: 20,
-                toppings: [],
-            },
+            orderId: "o2",
+            pizzaId: "p2",
+            pizzaName: "Second pizza",
+            pizzaPrice: 20,
+            selectedToppings: [],
         },
         {
-            id: "3",
-            item: {
-                name: "Third pizza",
-                price: 30,
-                toppings: [],
-            },
+            orderId: "o3",
+            pizzaId: "p3",
+            pizzaName: "Third pizza",
+            pizzaPrice: 30,
+            selectedToppings: [],
         },
     ],
 };

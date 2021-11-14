@@ -12,12 +12,11 @@ import {
 import { SizeFormRow } from "./SizeFormRow";
 import { TopingsFormRow } from "./TopingsFormRow";
 
-const pizzaSizes = ["S", "M", "L"];
-
 type Props = {
     isOpen: boolean;
     onClose: () => void;
     title: string;
+    sizes: Array<string>;
     topings: Array<string>;
     selectedSize: string;
     onSelectSize: (selectedSize: string) => void;
@@ -26,7 +25,8 @@ type Props = {
 };
 
 export const PizzaDetailsModal = (props: Props) => {
-    const { isOpen, onClose, title, topings, selectedSize, onSelectSize, selectedTopings, onSelectTopings } = props;
+    const { isOpen, onClose, title, sizes, topings, selectedSize, onSelectSize, selectedTopings, onSelectTopings } =
+        props;
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
@@ -35,7 +35,7 @@ export const PizzaDetailsModal = (props: Props) => {
                 <ModalCloseButton />
                 <ModalBody>
                     <VStack>
-                        <SizeFormRow value={selectedSize} onChange={onSelectSize} />
+                        <SizeFormRow sizes={sizes} value={selectedSize} onChange={onSelectSize} />
                         <TopingsFormRow topings={topings} value={selectedTopings} onChange={onSelectTopings} />
                     </VStack>
                 </ModalBody>

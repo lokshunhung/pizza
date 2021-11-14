@@ -17,12 +17,11 @@ const { Template, meta } = createStory(PizzaCard, {
 export const PizzaCard_ = Template.bind({});
 PizzaCard_.args = {
     pizza: {
+        pizzaId: "p1",
         image: fixtures.p1,
-        description: {
-            name: "Pizza Name",
-            price: 10,
-            toppings: [],
-        },
+        name: "Pizza Name",
+        price: 10,
+        toppings: [],
     },
 };
 

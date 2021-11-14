@@ -10,44 +10,39 @@ export const PizzaGrid_ = Template.bind({});
 PizzaGrid_.args = {
     pizzaListing: [
         {
+            pizzaId: "p1",
             image: fixtures.p1,
-            description: {
-                name: "Pizza one",
-                price: 1,
-                toppings: [],
-            },
+            name: "Pizza one",
+            price: 1,
+            toppings: [],
         },
         {
+            pizzaId: "p2",
             image: fixtures.p2,
-            description: {
-                name: "Pizza two",
-                price: 2,
-                toppings: [],
-            },
+            name: "Pizza two",
+            price: 2,
+            toppings: [],
         },
         {
+            pizzaId: "p3",
             image: fixtures.p3,
-            description: {
-                name: "Pizza three",
-                price: 3,
-                toppings: [],
-            },
+            name: "Pizza three",
+            price: 3,
+            toppings: [],
         },
         {
+            pizzaId: "p4",
             image: fixtures.p4,
-            description: {
-                name: "Pizza four",
-                price: 4,
-                toppings: [],
-            },
+            name: "Pizza four",
+            price: 4,
+            toppings: [],
         },
         {
+            pizzaId: "p5",
             image: fixtures.p5,
-            description: {
-                name: "Pizza five",
-                price: 5,
-                toppings: [],
-            },
+            name: "Pizza five",
+            price: 5,
+            toppings: [],
         },
     ],
 };

@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { MemoryRouter } from "react-router";
 import { theme } from "../theme";
-import "./font.css";
+import "../base.css";
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },

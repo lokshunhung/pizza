@@ -5,5 +5,11 @@
     "private": true,
     "scripts": {
         "start": "parcel serve"
+    },
+    "targets": {
+        "default": {
+            "source": "./src/index.html"
+        },
+        "main": false
     }
 }

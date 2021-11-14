@@ -4,6 +4,6 @@
     "license": "UNLICENSED",
     "private": true,
     "scripts": {
-        "storybook": "start-storybook --port 6006"
+        "start": "start-storybook --port 6006"
     }
 }

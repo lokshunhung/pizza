@@ -1,5 +1,6 @@
+import "@pizza/ui/base.css";
+import { App } from "./App";
 import { render } from "react-dom";
-import { App } from "./App/App";
 
 const element = <App />;
 

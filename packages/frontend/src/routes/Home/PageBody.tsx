@@ -18,7 +18,7 @@ export const PageBody = () => {
 
     return (
         <Container flex="1" maxWidth="container.xl" paddingY={4}>
-            <HStack>
+            <HStack alignItems="flex-start">
                 <Box flex="1">
                     {pizzaListing.length === 0 ? (
                         <NoPizzaPlaceholder />
@@ -26,7 +26,7 @@ export const PageBody = () => {
                         <PizzaGrid pizzaListing={pizzaListing} onChoose={onChoose} />
                     )}
                 </Box>
-                <Box flex="0 0">
+                <Box flex="0 0" padding={2}>
                     <Basket
                         orderItems={orderItems}
                         onCheckout={onCheckout}

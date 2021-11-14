@@ -8,7 +8,7 @@ import { commands } from "../../store/actions";
 import { useIsLoading } from "../../store/hooks";
 import { PageBody } from "./PageBody";
 
-export const Home = () => {
+export const HomePage = () => {
     const isLoading = useIsLoading();
     const dispatch = useDispatch();
 

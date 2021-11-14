@@ -8,7 +8,7 @@ import { PizzaLoadingSpinner } from "@pizza/ui/PizzaLoadingSpinner/PizzaLoadingS
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { commands } from "../../store/actions";
-import { useIsLoading } from "../../store/hooks";
+import { useIsLoading, useTypedSelector } from "../../store/hooks";
 import { ConnectedBasket } from "./ConnectedBasket";
 import { PageBody } from "./PageBody";
 
@@ -17,6 +17,7 @@ export const HomePage = () => {
     const dispatch = useDispatch();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const isDesktop = useBreakpointValue({ base: false, md: true });
+    const basketCount = useTypedSelector(state => state.app.orderItems.length);
 
     useEffect(() => {
         dispatch(commands.fetchPizzaListing());
@@ -29,7 +30,7 @@ export const HomePage = () => {
             <PageFooter />
 
             {isDesktop ? null : (
-                <BasketFloatingActionButton isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
+                <BasketFloatingActionButton isOpen={isOpen} onOpen={onOpen} onClose={onClose} basketCount={basketCount}>
                     <ConnectedBasket />
                 </BasketFloatingActionButton>
             )}

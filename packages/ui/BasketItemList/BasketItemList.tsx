@@ -1,5 +1,5 @@
 import { CloseIcon } from "@chakra-ui/icons";
-import { Box, Divider, HStack, IconButton, Text, VStack } from "@chakra-ui/react";
+import { Box, Divider, Flex, HStack, IconButton, Text, VStack } from "@chakra-ui/react";
 import { OrderItem } from "@pizza/types";
 import { useState } from "react";
 import { TiShoppingCart } from "react-icons/ti";
@@ -28,7 +28,7 @@ export const BasketItemList = (props: Props) => {
                     </HStack>
                 ) : (
                     basketItems.map(item => (
-                        <HStack justifyContent="space-between" key={item.orderId}>
+                        <HStack alignItems="flex-start" key={item.orderId}>
                             <IconButton
                                 icon={<CloseIcon />}
                                 size="xs"
@@ -37,8 +37,15 @@ export const BasketItemList = (props: Props) => {
                                 aria-label="Remove"
                                 onClick={() => setRemoveOrderId(item.orderId)}
                             />
-                            <Text flex="1">{item.pizzaName}</Text>
-                            <Text>${item.pizzaPrice.toFixed(2)}</Text>
+                            <Flex flex="1" flexDirection="column" alignItems="stretch">
+                                <HStack justifyContent="space-between">
+                                    <Text flex="1">{item.pizzaName}</Text>
+                                    <Text>${item.pizzaPrice.toFixed(2)}</Text>
+                                </HStack>
+                                <Text color="gray.300" fontSize="sm">
+                                    {[item.selectedSize, ...item.selectedToppings].join(", ")}
+                                </Text>
+                            </Flex>
                         </HStack>
                     ))
                 )}

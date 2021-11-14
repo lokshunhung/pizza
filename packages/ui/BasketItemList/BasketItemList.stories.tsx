@@ -27,7 +27,7 @@ One.args = {
             pizzaName: "First pizza",
             pizzaPrice: 10,
             selectedSize: "S",
-            selectedToppings: [],
+            selectedToppings: ["top 1", "top 2"],
         },
     ],
 };
@@ -41,7 +41,7 @@ Many.args = {
             pizzaName: "First pizza",
             pizzaPrice: 10,
             selectedSize: "S",
-            selectedToppings: [],
+            selectedToppings: ["top 1", "top 2"],
         },
         {
             orderId: "o2",
@@ -49,7 +49,7 @@ Many.args = {
             pizzaName: "Second pizza",
             pizzaPrice: 20,
             selectedSize: "S",
-            selectedToppings: [],
+            selectedToppings: ["top 1", "top 2", "top 3"],
         },
         {
             orderId: "o3",
@@ -57,7 +57,7 @@ Many.args = {
             pizzaName: "Third pizza",
             pizzaPrice: 30,
             selectedSize: "S",
-            selectedToppings: [],
+            selectedToppings: ["top 1", "top 2", "top 3"],
         },
     ],
 };

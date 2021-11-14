@@ -26,6 +26,7 @@ One.args = {
             pizzaId: "p1",
             pizzaName: "First pizza",
             pizzaPrice: 10,
+            selectedSize: "S",
             selectedToppings: [],
         },
     ],
@@ -39,6 +40,7 @@ Many.args = {
             pizzaId: "p1",
             pizzaName: "First pizza",
             pizzaPrice: 10,
+            selectedSize: "S",
             selectedToppings: [],
         },
         {
@@ -46,6 +48,7 @@ Many.args = {
             pizzaId: "p2",
             pizzaName: "Second pizza",
             pizzaPrice: 20,
+            selectedSize: "S",
             selectedToppings: [],
         },
         {
@@ -53,6 +56,7 @@ Many.args = {
             pizzaId: "p3",
             pizzaName: "Third pizza",
             pizzaPrice: 30,
+            selectedSize: "S",
             selectedToppings: [],
         },
     ],

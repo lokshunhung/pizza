@@ -1,3 +1,4 @@
+import { routerActions } from "connected-react-router";
 import { Middleware } from "redux";
 import { commands, documents } from "./actions";
 import { Dependencies, State } from "./types";
@@ -23,13 +24,13 @@ export const createMiddlewareMap = ({ pizzaService }: Dependencies): Record<stri
             next(action);
 
             if (commands.addPizzaOrderItem.matchActionName(action)) {
-                const { orderItems } = middleware.getState();
+                const { orderItems } = middleware.getState().app;
                 const newOrderItems = [...orderItems, action.payload];
                 middleware.dispatch(documents.setPizzaOrder(newOrderItems));
             }
 
             if (commands.removePizzaOrderItem.matchActionName(action)) {
-                const { orderItems } = middleware.getState();
+                const { orderItems } = middleware.getState().app;
                 const newOrderItems = orderItems.filter(orderItem => orderItem.orderId !== action.payload);
                 middleware.dispatch(documents.setPizzaOrder(newOrderItems));
             }
@@ -64,12 +65,15 @@ export const createMiddlewareMap = ({ pizzaService }: Dependencies): Record<stri
             next(action);
 
             if (commands.submitPizzaOrder.matchActionName(action)) {
-                middleware.dispatch(documents.setLoading(true));
+                middleware.dispatch(documents.setLoading(true, "checkout"));
                 pizzaService
                     .submitOrder(action.payload)
-                    .then(() => {})
+                    .then(() => {
+                        middleware.dispatch(documents.setPizzaOrder([]));
+                        middleware.dispatch(routerActions.push("/order-success"));
+                    })
                     .catch(() => {})
-                    .finally(() => middleware.dispatch(documents.setLoading(false)));
+                    .finally(() => middleware.dispatch(documents.setLoading(false, "checkout")));
             }
         },
     };

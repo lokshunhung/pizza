@@ -1,4 +1,4 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack, Text, useBreakpointValue } from "@chakra-ui/react";
 import imgPizza from "./pizza.png";
 import { ToggleThemeButton } from "./ToggleThemeButton";
 import { ViewBasketButton } from "./ViewBasketButton";
@@ -9,6 +9,7 @@ type Props = {
 
 export const PageHeader = (props: Props) => {
     const { children } = props;
+    const isDesktop = useBreakpointValue({ base: false, md: true });
     return (
         <Box padding={4} width="full" backgroundColor="cyan.600">
             <HStack>
@@ -23,7 +24,7 @@ export const PageHeader = (props: Props) => {
 
                 <HStack flex="1" justifyContent="flex-end">
                     <ToggleThemeButton />
-                    <ViewBasketButton>{children}</ViewBasketButton>
+                    {isDesktop ? <ViewBasketButton>{children}</ViewBasketButton> : null}
                 </HStack>
             </HStack>
         </Box>

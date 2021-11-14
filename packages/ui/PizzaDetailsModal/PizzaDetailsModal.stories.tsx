@@ -24,6 +24,8 @@ export const PizzaDetailsModal_ = () => {
                 onSelectSize={setSize}
                 selectedTopings={topings}
                 onSelectTopings={setTopings}
+                onAddToBasket={() => {}}
+                sizes={["S", "M", "L"]}
             />
         </Fragment>
     );

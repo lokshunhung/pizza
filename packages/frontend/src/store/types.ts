@@ -1,14 +1,20 @@
 import { PizzaService } from "@pizza/api/pizza-service";
 import { OrderItem, PizzaItem } from "@pizza/types";
+import { History } from "history";
 
 export type Dependencies = {
     pizzaService: PizzaService;
+    history: History;
 };
 
 export type State = {
-    loading: number;
-    pizzaListing: Array<PizzaItem>;
-    orderItems: Array<OrderItem>;
+    loading: {
+        [identifier: string]: number;
+    };
+    app: {
+        pizzaListing: Array<PizzaItem>;
+        orderItems: Array<OrderItem>;
+    };
     modal: {
         pizzaDetails: {
             pizzaId: string;
@@ -16,4 +22,5 @@ export type State = {
             selectedToppings: Array<string>;
         } | null;
     };
+    router?: any;
 };

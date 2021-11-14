@@ -1,20 +1,23 @@
-import { Box, Container, HStack } from "@chakra-ui/react";
+import { Box, Container, HStack, useBreakpointValue } from "@chakra-ui/react";
 import { Basket } from "@pizza/ui/Basket/Basket";
 import { NoPizzaPlaceholder } from "@pizza/ui/NoPizzaPlaceholder/NoPizzaPlaceholder";
 import { PizzaGrid } from "@pizza/ui/PizzaGrid/PizzaGrid";
 import { useDispatch } from "react-redux";
 import { commands } from "../../store/actions";
-import { useTypedSelector } from "../../store/hooks";
+import { useIsLoading, useTypedSelector } from "../../store/hooks";
 
 export const PageBody = () => {
-    const pizzaListing = useTypedSelector(state => state.pizzaListing);
-    const orderItems = useTypedSelector(state => state.orderItems);
+    const pizzaListing = useTypedSelector(state => state.app.pizzaListing);
+    const orderItems = useTypedSelector(state => state.app.orderItems);
+    const isLoading = useIsLoading("checkout");
 
     const dispatch = useDispatch();
     const onChoose = (pizzaId: string) => dispatch(commands.openPizzaDetailsModal(pizzaId));
     const onCheckout = () => dispatch(commands.submitPizzaOrder(orderItems));
     const onEmptyBasket = () => dispatch(commands.clearAllPizzaOrderItem());
     const onRemoveOrder = (orderId: string) => dispatch(commands.removePizzaOrderItem(orderId));
+
+    const isDesktop = useBreakpointValue({ base: false, md: true });
 
     return (
         <Container flex="1" maxWidth="container.xl" paddingY={4}>
@@ -27,12 +30,15 @@ export const PageBody = () => {
                     )}
                 </Box>
                 <Box flex="0 0" padding={2}>
-                    <Basket
-                        orderItems={orderItems}
-                        onCheckout={onCheckout}
-                        onEmptyBasket={onEmptyBasket}
-                        onRemoveOrder={onRemoveOrder}
-                    />
+                    {isDesktop ? (
+                        <Basket
+                            orderItems={orderItems}
+                            onCheckout={onCheckout}
+                            onEmptyBasket={onEmptyBasket}
+                            onRemoveOrder={onRemoveOrder}
+                            isLoading={isLoading}
+                        />
+                    ) : null}
                 </Box>
             </HStack>
         </Container>

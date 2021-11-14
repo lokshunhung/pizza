@@ -5,6 +5,6 @@ export function useTypedSelector<T>(selector: (state: State) => T): T {
     return useSelector(selector);
 }
 
-export function useIsLoading(): boolean {
-    return useTypedSelector(state => state.loading > 0);
+export function useIsLoading(identifier: string = "global"): boolean {
+    return useTypedSelector(state => (state.loading[identifier] || 0) > 0);
 }

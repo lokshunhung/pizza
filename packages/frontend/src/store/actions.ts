@@ -39,8 +39,8 @@ export const commands = createActions("cmd", {
 });
 
 export const documents = createActions("doc", {
-    setLoading(isLoading: boolean) {
-        return { payload: isLoading } as const;
+    setLoading(isLoading: boolean, identifier: string = "global") {
+        return { payload: { isLoading, identifier } } as const;
     },
 
     setPizzaListing(pizzaListing: Array<PizzaItem>) {

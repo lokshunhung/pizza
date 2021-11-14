@@ -7,7 +7,9 @@ const pizzaSizes = ["S", "M", "L"];
 
 export const ConnectedPizzaDetailsModal = () => {
     const modalDetails = useTypedSelector(state => state.modal.pizzaDetails);
-    const pizza = useTypedSelector(state => state.pizzaListing.find(pizza => pizza.pizzaId === modalDetails?.pizzaId));
+    const pizza = useTypedSelector(state =>
+        state.app.pizzaListing.find(pizza => pizza.pizzaId === modalDetails?.pizzaId),
+    );
     const dispatch = useDispatch();
     const onClose = () => dispatch(commands.closePizzaDetailsModal());
     const onAddToBasket = () => {

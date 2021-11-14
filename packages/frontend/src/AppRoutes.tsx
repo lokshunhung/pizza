@@ -8,8 +8,8 @@ export const AppRoutes = () => {
     return (
         <Fragment>
             <Switch>
-                <Route exact path="/" component={HomePage} />
                 <Route exact path="/order-success" component={OrderSuccessPage} />
+                <Route exact path="/" component={HomePage} />
             </Switch>
 
             <ConnectedPizzaDetailsModal />

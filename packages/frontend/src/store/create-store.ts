@@ -1,6 +1,7 @@
+import { routerMiddleware } from "connected-react-router";
 import { applyMiddleware, compose, createStore as createReduxStore } from "redux";
 import { createMiddlewareMap } from "./create-middleware-map";
-import { reducer } from "./reducer";
+import { createReducer } from "./create-reducer";
 import { Dependencies } from "./types";
 
 export const createStore = (dependencies: Dependencies) => {
@@ -9,7 +10,9 @@ export const createStore = (dependencies: Dependencies) => {
 
     const middlewares = Object.values(createMiddlewareMap(dependencies));
 
-    const enhancer = composeEnhancers(applyMiddleware(...middlewares));
+    const enhancer = composeEnhancers(applyMiddleware(routerMiddleware(dependencies.history), ...middlewares));
+
+    const reducer = createReducer(dependencies.history);
 
     const store = createReduxStore(reducer, enhancer);
 

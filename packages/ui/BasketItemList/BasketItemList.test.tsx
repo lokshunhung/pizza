@@ -1,6 +1,5 @@
 import "@testing-library/jest-dom"; // For extending types
 import "@testing-library/jest-dom/extend-expect";
-
 import { render, screen } from "@testing-library/react";
 import { BasketItemList } from "./BasketItemList";
 
@@ -56,6 +55,14 @@ describe("BasketItemList", () => {
 
         rerender(<BasketItemList orderItems={createOrderItems().slice(1)} onRemoveOrder={onRemoveOrder} />);
         expect(screen.getByText(/Total/).parentElement).toHaveTextContent("$50.00");
+    });
+
+    test("displays order items", () => {
+        const onRemoveOrder = jest.fn();
+        render(<BasketItemList orderItems={createOrderItems()} onRemoveOrder={onRemoveOrder} />);
+        expect(screen.queryByText(/First pizza/)).toBeTruthy();
+        expect(screen.queryByText(/Second pizza/)).toBeTruthy();
+        expect(screen.queryByText(/Third pizza/)).toBeTruthy();
     });
 
     test("displays order item details", () => {

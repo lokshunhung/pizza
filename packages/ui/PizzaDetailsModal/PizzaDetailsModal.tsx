@@ -26,19 +26,13 @@ type Props = {
 };
 
 export const PizzaDetailsModal = (props: Props) => {
-    const {
-        isOpen,
-        onAddToBasket,
-        onClose,
-        title,
-        sizes,
-        topings,
-        selectedSize,
-        onSelectSize,
-        selectedTopings,
-        onSelectTopings,
-    } = props;
+    const { isOpen, onClose, title, sizes, topings, selectedSize, onSelectSize, selectedTopings, onSelectTopings } =
+        props;
     const disabled = !selectedSize;
+    const onAddToBasket = () => {
+        props.onAddToBasket();
+        onClose();
+    };
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />

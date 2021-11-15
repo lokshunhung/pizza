@@ -12,7 +12,7 @@ export const ConnectedPizzaDetailsModal = () => {
     );
     const dispatch = useDispatch();
     const onClose = () => dispatch(commands.closePizzaDetailsModal());
-    const onAddToBasket = () => {
+    const onAddToBasket = () =>
         dispatch(
             commands.addPizzaOrderItem({
                 orderId: `${Date.now() + Math.floor(Math.random() * 1000)}`,
@@ -23,8 +23,6 @@ export const ConnectedPizzaDetailsModal = () => {
                 selectedToppings: modalDetails!.selectedToppings,
             }),
         );
-        onClose();
-    };
     const onSelectSize = (selectedSize: string) =>
         dispatch(commands.updatePizzaDetailsModalSelection({ selectedSize }));
     const onSelectToppings = (selectedToppings: Array<string>) =>
